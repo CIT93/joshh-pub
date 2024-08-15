@@ -1,2 +1,2 @@
 # joshh-pub
-Josh's Public Repo CIT93
+Josh Hintz Public Repo CIT93
