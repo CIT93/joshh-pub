@@ -19,4 +19,10 @@ const recyclingAmount = 16
 const transportationImpact = 6
 
 // My Carbon Footprint Total
-const myCarbonTotal = 68
+const myCarbonTotal = householdMembers + houseSize + foodImpact + waterConsumption + householdGadgets + wasteProduction
+    + recyclingAmount + transportationImpact;
+
+// HTML Update
+const myHeading = document.querySelector("H2");
+myHeading.textContent = myCarbonTotal;
+
