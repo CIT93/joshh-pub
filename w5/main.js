@@ -33,39 +33,53 @@ function determineHouseHoldPts(numberInHousehold) {
   }
   return houseHoldPoints;
 }
+function displayOutput() {
+  for (obj of cfpData) {
+    console.log(obj)
+    const output = document.getElementById("output");
+    const newH2 = document.createElement("h2");
+    newH2.textContent = `Carbon Footprint ${obj.total}`;
+     const newH3 = document.createElement("h3");
+    newH3.textContent = 'Based on number in and size of home';
+     const newP = document.createElement("p");
+     newP.textContent = `This number is based on the number of people in the house of ${obj.cfpTotal} (score: ${obj.cfpTotal}),`;
+     newP.textContent += ` and a ${obj.cfpTotal} size of home (score:${obj.cfpTotal}).`;
+    output.appendChild(newH2);
+    output.appendChild(newH3);
+     output.appendChild(newP);
+}
+}
 
 function start(houseHoldMembers, houseSize) {
   const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
   const houseSizePTS = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePTS;
-  cfpData.push([
-    houseHoldMembers,
-    houseSize,
-    houseHoldPTS,
-    houseSizePTS,
-    total,
-  ]);
+  // const cfpObj = {
+  //   houseM: houseHoldMembers,
+  //   houseS: houseSize,
+  //   houseMPTS: houseHoldPTS,
+  //   houseSPTS: houseSizePTS,
+  //   cfpTotal: total
+  // };
+  cfpData.push({
+    houseM: houseHoldMembers,
+    houseS: houseSize,
+    houseMPTS: houseHoldPTS,
+    houseSPTS: houseSizePTS,
+    cfpTotal: total
+  });
+
+
+ 
 }
 
-function displayOutput() {
-  for (arr of cfpData) {
-    const output = document.getElementById("output");
-    const newH2 = document.createElement("h2");
-    newH2.textContent = `Carbon Footprint ${arr[4]}`;
-    const newH3 = document.createElement("h3");
-    newH3.textContent = 'Based on number in and size of home';
-    const newP = document.createElement("p");
-    newP.textContent = `This number is based on the number of people in the house of ${arr[0]} (score: ${arr[3]}),`;
-    newP.textContent += ` and a ${arr[1]} size of home (score:${arr[2]}).`;
-    output.appendChild(newH2);
-    output.appendChild(newH3);
-    output.appendChild(newP);
-}
-}
+
+
+
 
 start(2, "apt");
 start(10, "large");
 start(2, "small");
-start(42, "medium");
+start(4, "medium");
 
 displayOutput()
