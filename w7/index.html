@@ -3,23 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="main.js"></script>
+    <script type="module" src="main.js"></script>
     <title>Week 6 - Carbon Footprint - Pub</title>
-    <style>
-      html {
-        font-size: 22px;
-      }
-      body {
-        background-color: #333;
-        color: whitesmoke;
-      }
-      input:in-range {
-        background-color: lightgreen;
-      }
-      input:out-of-range {
-        background-color: lightcoral;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <form id="form">
@@ -27,19 +13,19 @@
         <legend>Calculating Your Carbon Footprint Points</legend>
         <div>
           <label for="">First Name:</label>
-          <input type="text" name="firstname" maxlength="20" required/>
+          <input type="text" name="firstname" id="firstname"  maxlength="20" required />
         </div>
         <div>
           <label for="">Last Name:</label>
-          <input type="text" name="lastname" maxlength="20" required />
+          <input type="text" name="lastname" id="lastname" maxlength="20" required />
         </div>
         <div>
           <label for="">Count the member in your household</label>
-          <input type="number" name="housem" min="1" max="6" required />
+          <input type="number" name="housem" id="housem" min="1" max="6" required />
         </div>
         <div>
           <label for="">Consider the size of your home</label>
-          <select name="house" required>
+          <select name="houseS" id="houseS" required>
             <option value="">---Please enter the size of your home---</option>
             <option value="apt">Apartment</option>
             <option value="large">Large</option>
@@ -51,5 +37,29 @@
       </fieldset>
     </form>
     <div id="output"></div>
+    <div id="tab-data"></div>
+    <!-- <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>HouseHold</th>
+          <th>House Size</th>
+          <th>Carbon Footprint</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Josh</td>
+          <td>3</td>
+          <td>Large</td>
+          <td>20</td>
+          <td>
+            <button>Edit</button>
+            <button>Del</button>
+          </td>
+        </tr>
+      </tbody>
+    </table> -->
   </body>
 </html>
