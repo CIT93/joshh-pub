@@ -25,10 +25,10 @@ function start(firstName, lastName, houseHoldMembers, houseSize) {
 }
 FORM.addEventListener("submit", function (e) {
   e.preventDefault();
-  const firstName = document.getElementById("firstname").value;
-  const lastName = document.getElementById("lastname").value;
+  const firstName = FORM.firstname.value;
+  const lastName = FORM.lastname.value;
   const houseMembers = parseInt(document.getElementById("housem").value);
-  const houseSize = document.getElementById("houseS").value;
+  const houseSize = FORM.houseS.value;
   start(firstName, lastName, houseMembers, houseSize);
   OUTPUT.innerHTML = "";
   // displayOutput();

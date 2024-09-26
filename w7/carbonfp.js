@@ -9,7 +9,6 @@ function determineHouseSizePts(size) {
     } else if (size === "apt") {
       houseSizePoints = 2;
     }
-    console.log(`Based on the size ${size}, the points are ${houseSizePoints},`);
     return houseSizePoints;
   }
   
