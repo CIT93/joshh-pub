@@ -13,7 +13,7 @@ function renderTblHeading() {
     //   "Actions",
     // ];
     const headingTxtArr = [
-      "Name",
+      "firstname",
       "Footprint",
     ];
     headingTxtArr.forEach(function (text) {

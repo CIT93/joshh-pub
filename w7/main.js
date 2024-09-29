@@ -14,7 +14,7 @@ function start(firstName, lastName, houseHoldMembers, houseSize) {
   const houseSizePTS = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePTS;
   cfpData.push({
-    firstName: firstname,
+    firstName: firstName,
     lastName: lastName,
     houseM: houseHoldMembers,
     houseS: houseSize,
