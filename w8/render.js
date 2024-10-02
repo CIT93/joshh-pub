@@ -38,7 +38,7 @@ function renderTblBtn(index, data) {
     renderTbl(data);
   })
   btnEdit.addEventListener('click', function (e) {
-    
+
   })
   return td;
 }
@@ -63,9 +63,14 @@ function renderTblBody(data) {
 }
 
 function renderTbl(data) {
+  TBL.innerHTML = "";
+  if (data.length > 0) {
   const table = renderTblHeading();
   const tbody = renderTblBody(data);
   table.appendChild(tbody);
-  TBL.appendChild(table);
+    TBL.appendChild(table);
+  } else {
+    TBL.innerHTML = "";
+  }
 }
 export { renderTbl };
