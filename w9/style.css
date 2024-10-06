@@ -18,3 +18,11 @@
       tbody tr:nth-child(odd) {
         background-color: green;
       }
+
+      .error {
+          color: red;
+      }
+      .invalid {
+        border-color: red;
+      }
+
