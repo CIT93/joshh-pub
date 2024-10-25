@@ -23,7 +23,6 @@ const renderTblHeading = () => {
   table.appendChild(thead);
   return table;
 }
-
 const onUpdate = (index, data) => {
   data.splice(index, 1);
   saveLS(data);
