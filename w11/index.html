@@ -36,25 +36,16 @@
           </select>
         </div>
         <div>
-          <label for="">How often do you eat meat?</label>
-          <select name="meatConsumption" id="meatConsumption" required>
-            <option value="">---Please Select---</option>
-            <option value="daily">Domestic Meat - Daily</option>
-            <option value="fewTimePerWeek">Domestic Meat - Few Time A Week</option>
+          <label>Elevate your food choices</label>
+          <select name="food" required>
+            <option value="">----Types of food----</option>
+            <option value="meatDaily">Domestic Meat daily basis</option>
+            <option value="meatWeekly">Domestic Meat few times a week</option>
             <option value="vegetarian">Vegetarian</option>
-            <option value="veganWild">Vegan or Only Wild Meat</option>
+            <option value="veganOrWild">Vegan or only eat wild</option>
           </select>
         </div>
-        <div>
-          <label for="foodType">What type of food do u eat?</label>
-          <select name="foodType" id="foodType" required>
-            <option value="">--- Please Select ---</option>
-            <option value="prepackaged">Mostly Prepackaged</option>
-            <option value="balance">Balanced (Fresh & Convenience Food)</option>
-            <option value="freshLocal">Mostly Fresh, Local, or Hunted</option>
-          </select>
-        </div>
-        <button type="submit">Submit</button><br>
+                <button type="submit">Submit</button><br>
         <span id="submitError" class="error"></span>
       </fieldset>
     </form>

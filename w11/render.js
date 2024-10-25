@@ -10,7 +10,7 @@ const renderTblHeading = () => {
     "Name",
     "HouseHold",
     "HouseSize",
-    "FoodFootprint",
+    "Food Choice",
     "Footprint",
     "Actions",
   ];
@@ -46,6 +46,8 @@ const renderTblBtn = (obj, index, data) => {
     FORM.lastName.value = obj.last;
     FORM.housem.value = obj.houseMembers;
     FORM.houses.value = obj.houseSize;
+    FORM.food.value = obj.foodChoice;
+    onUpdate(index, data)
   })
   return td;
 }
@@ -56,7 +58,7 @@ const renderTblBody = (data) => {
     console.log(index)
     const tr = document.createElement("tr");
     for (const [key, value] of Object.entries(obj)) {
-      if (key !== "last" && key !== "houseHoldPoints" && key !== "houseSizePoints") {
+      if (key !== "last" && key !== "houseHoldPoints" && key !== "houseSizePoints" && key !=="foodPoints") {
         const td = document.createElement("td");
         td.textContent = value;
         tr.appendChild(td);

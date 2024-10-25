@@ -1,13 +1,13 @@
 class FP {
-  constructor(first, last, houseMembers, houseSize) {
+  constructor(first, last, houseMembers, houseSize, foodChoice) {
     this.first = first;
     this.last = last;
     this.houseMembers = houseMembers;
-      this.houseSize = houseSize;
-      this.meatConsumption = meatConsumption;
-      this.foodType = foodType;
+    this.houseSize = houseSize;
+    this.foodChoices = foodChoice;
     this.houseHoldPoints();
     this.houseSizePoints();
+    this.foodChoicePoints();
     this.total();
   }
   houseHoldPoints() {
@@ -37,33 +37,20 @@ class FP {
     } else if (this.houseSize === "apt") {
       this.houseSizePoints = 2;
     }
+  }
+  foodChoicePoints() {
+    if (this.foodChoice === "meatDaily") {
+      this.foodPoints = 10;
+    } else if (this.foodChoice = "meatWeekly") {
+      this.foodPoints = 8;
+    } else if (this.foodChoice = "vegetarian") {
+      this.foodPoints = 4;
+    } else if (this.foodChoice = "veganOrWild") {
+      this.foodPoints = 2;
     }
-    
-
-    meatConsumption() {
-        if (this.meatConsumption === "daily") {
-            meatPoints = 10;
-        } else if (this.meatConsumption === "few") {
-            meatPoints = 8;
-        } else if (this.meatConsumption === "vegetarian") {
-            meatPoints = 4;
-        } else if (this.meatConsumption === "vegan") {
-            meatPoints = 2;
-        }
-    }
-    
-    meatPoints() {
-        if (this.foodType === "prepackaged") {
-            foodTypePoints = 12;
-        } else if (this.foodType === "balanced") {
-            foodTypePoints = 6;
-        } else if (this.foodType === "local") {
-            foodTypePoints = 2;
-        }
-    
   }
   total() {
-      this.total = this.houseHoldPoints + this.houseSizePoints + this.calculateFoodFootprint();
+      this.total = this.houseHoldPoints + this.houseSizePoints + this.foodPoints;
   }
 }
 
