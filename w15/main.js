@@ -2,6 +2,7 @@ import { renderTbl } from "./render.js";
 import { FORM, FNAME, LNAME, SUBMIT } from "./global.js";
 import { saveLS, cfpData } from "./storage.js";
 import { FP } from "./fp.js";
+import { calculateAverageFootprint } from "./avg.js";
 
 renderTbl(cfpData);
 
@@ -32,88 +33,30 @@ FORM.addEventListener("submit", e => {
     cfpData.push(fpObj)
     saveLS(cfpData);
     renderTbl(cfpData);
+
+    const averageFootprint = calculateAverageFootprint(cfpData);
+    insertAverageFootprint(averageFootprint)
+
     FORM.reset();
   } else {
     SUBMIT.textContent = "Form requires first name and last name.";
   }
 });
 
+// Function to insert average footprint score into the table
+const insertAverageFootprint = (averageFootprint) => {
+  const table = document.querySelector("table");
+  const tbody = table.querySelector("tbody");
+  const lastRow = tbody.querySelector("tr:last-child");
 
-// ASync JS Video
+  // Create a new row for the average
+  const newRow = table.insertRow(tbody.rows.length);
 
-// let pizza
-// function orderPizza() {
-//   console.log(`Order pizza`)
-//   setTimeout(() => {
-//     pizza = `🍕`
-//   }, 2000)
-//   console.log(`Pizza was ordered`)
-// }
-// orderPizza()
-// console.log(`Eat ${pizza}`)
+  const td1 = newRow.insertCell(0);
+  td1.textContent = "Average Footprint";
+  td1.colSpan = 4; // Span over the columns for name, household, etc.
 
-
-// let pizza
-// function orderPizza() {
-//   console.log(`Order pizza`)
-//   setTimeout(() => {
-//     pizza = `🍕`
-//     console.log(`${pizza} is ready`)
-//   }, 2000)
-//   console.log(`Pizza was ordered`)
-// }
-// orderPizza()
-// console.log(`Call Qoli`)
-// console.log(`Eat ${pizza}`)
-
-// CallBack
-// function orderPizza(callback) {
-//   setTimeout(() => {
-//     const pizza = `🍕`
-//     callback()
-//   }, 2000)
-// }
-// function pizzaReady(pizza) {
-//   console.log(`Eat the ${pizza}`)
-// }
-
-// orderPizza(pizzaReady)
-// console.log(`Call Qoli`)
-// window.addEventListener('click', function () {
-//   console.log('clicked')
-// })
-
-// // Event Listner Added
-// window.addEventListener('click', callback)
-// function callback() {
-//   console.log('clicked')
-// }
-
-
-// function thing1() {
-//   // Call pizza shop
-// }
-
-// function thing2() {
-//   // Order the pizza 
-// }
-
-// function thing3() {
-//   // Eat the pizza
-// }
-
-// function thing1(callback) {
-//   callback()
-// }
-// function thing2(callback) {
-//   callback()
-// }
-// function thing3(callback) {
-//   callback()
-// }
-
-// thing1(() => {
-//   thing2(() => {
-//   thing3()
-//   })
-// })
+  const td2 = newRow.insertCell(1);
+  td2.textContent = averageFootprint;
+  td2.style.fontWeight = "bold"; // Make average value bold
+};
