@@ -1,29 +1,36 @@
-async function fetchAlbums() {
-    try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/albums');
-        if (!response.ok) {
-            throw new Error('Server Error: Failed to fetch data');
-        }
+const url = "https://jsonplaceholder.typicode.com/posts"
+        
 
-        const data = await response.json()
-        if (!data || data.length === 0) {
-            throw new Error('Data Error: No Albums Found');
+const getPosts = async () => {
+    try {
+        const request = await fetch(url)
+        const data = await request.json();
+        if (data.length) {
+            onSuccess(data);
+        } else {
+            console.log(`error on return value`);
         }
-        renderData(data);
-    } catch (error) {
-        console.error('Error:', error.message);
-        document.getElementById('album-container').innerHTML = '<p>Error: ${error.message}'
+    } catch {
+        onError(error);
     }
 }
 
-function renderData(data) {
-    const container = document.getElementById('album-container');
-    container.innerHTML = ''; 
-    data.forEach(album => {
-        const albumDiv = document.createElement('div');
-        albumDiv.innerHTML = `<h3>${album.title}</h3>`;
-        container.appendChild(albumDiv);
+const displayPosts = posts => {
+    posts.forEach(post => {
+        
     });
 }
 
-fetchAlbums();
+const onError = err => {
+    console.log(`Error ${err}`);
+}
+
+const onSuccess = posts => {
+    displayPosts(posts);
+}
+
+const start = () => {
+    getPosts();
+}
+
+start()
