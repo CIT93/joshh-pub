@@ -30,6 +30,7 @@ FORM.addEventListener("submit", e => {
   e.preventDefault();
   if (FNAME.value !== '' && LNAME.value !== '') {
     SUBMIT.textContent = '';
+    const bothAppliances = e.target.bothAppliances.checked;
     const fpObj = new FP(
       FNAME.value,
       LNAME.value,
@@ -38,6 +39,7 @@ FORM.addEventListener("submit", e => {
       e.target.food.value,
       e.target.foodSource.value,
       parseInt(e.target.water.value),
+      bothAppliances
     );
     cfpData.push(fpObj)
     saveLS(cfpData);

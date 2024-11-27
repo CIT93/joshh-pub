@@ -7,6 +7,7 @@ class FP {
     this.foodChoices = foodChoice;
     this.foodSource = foodSource;
     this.waterConsumePoints = waterConsum
+    this.bothAppliances = bothAppliances;
     this.calHouseHoldPoints();
     this.calHouseSizePoints();
     this.calFoodChoicePoints();
@@ -69,7 +70,10 @@ class FP {
         this.houseSizePoints +
         this.foodPoints +
       this.foodSourcePoints +
-    this.waterConsumePoints;
+      this.waterConsumePoints;
+    if (this.bothAppliances) {
+      this.total *= 2;
+    }
   }
 }
 
