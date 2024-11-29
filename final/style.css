@@ -1,0 +1,238 @@
+/* Ensure box-sizing includes padding and borders */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Style for the destinations table */
+.destinations-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 12px;
+  font-family: "Arial", sans-serif;
+  background-color: #f4f7fb; /* Softer background color */
+  color: #333;
+  border: 1px solid #ddd;
+  table-layout: auto; /* Automatically adjust table columns */
+}
+
+/* Style for table header */
+.destinations-table th {
+  padding: 15px;
+  text-align: center;
+  background-color: #2c3e50; /* Darker, more readable header color */
+  color: #ecf0f1;
+  font-size: 1.1em;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  border: 1px solid #bbb;
+  text-transform: uppercase;
+}
+
+/* Style for table cells */
+.destinations-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  background-color: #ffffff;
+  color: #333;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+/* Sticky table header */
+.destinations-table thead {
+  background-color: #2c3e50;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for alternating row colors */
+.destinations-table tbody tr:nth-child(even) {
+  background-color: #ecf0f1;
+}
+
+.destinations-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+/* Hover effect for rows */
+.destinations-table tbody tr:hover {
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+}
+
+/* Add subtle row transition effect */
+.destinations-table td,
+.destinations-table th {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Style for page background */
+body {
+  background: linear-gradient(45deg, #7f8c8d, #34495e); /* Neutral gradient */
+  background-size: 400% 400%;
+  animation: backgroundMove 10s infinite;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+
+@keyframes backgroundMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Style for headers */
+h1,
+h2 {
+  font-size: 2.5em;
+  color: #2c3e50; /* Darker color for better contrast */
+  text-shadow: 2px 2px 5px #333;
+  margin-bottom: 20px;
+}
+
+h1:hover,
+h2:hover {
+  color: #70a1d7;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+/* Button styles for all buttons */
+button,
+.input-button {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  color: #fff;
+  background-color: #16a085; /* Teal color */
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+button:hover,
+.input-button:hover {
+  background-color: #1abc9c; /* Lighter teal on hover */
+  transform: scale(1.05);
+}
+
+/* Style icons inside buttons */
+.button .material-icons {
+  vertical-align: middle;
+  margin-right: 8px;
+  font-size: 1.2em;
+}
+
+/* Floating placeholder */
+input[type="text"]::placeholder,
+input[type="number"]::placeholder {
+  color: #aaa; /* Light gray placeholder */
+  font-style: italic;
+}
+
+/* Fieldset styling */
+fieldset {
+  border: 2px solid #16a085; /* Teal border for fieldset */
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the form legend */
+legend {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #16a085;
+}
+
+/* Style for the labels and inputs */
+label {
+  font-size: 1.2em;
+  color: #2c3e50;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Inputs, selects, and buttons consistency */
+input, select, button {
+  font-size: 1em; /* Consistent font size */
+  padding: 12px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9; /* Light background color */
+  color: #333; /* Dark text */
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+select:focus {
+  border-color: #16a085;
+  outline: none;
+  background-color: #ecf0f1; /* Light gray background when focused */
+}
+
+/* Button styling */
+button[type="submit"] {
+  background-color: #16a085; /* Teal background for consistency */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #1abc9c;
+}
+
+button[type="submit"]:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+/* Target the packing list container */
+#packing-list-output {
+  font-size: 1.2rem; /* Make text slightly larger */
+  color: #333; /* Use a dark gray for better readability */
+  background-color: #f9f9f9; /* Light background to make it stand out */
+  border: 1px solid #ccc; /* Add a subtle border */
+  padding: 15px; /* Add padding for better spacing */
+  border-radius: 8px; /* Soften edges */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+/* Style individual list items */
+#packing-list-output p {
+  margin: 8px 0; /* Add spacing between items */
+  color: #007bff; /* Use a modern blue for the text */
+  font-weight: bold; /* Make text slightly bold */
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getaway Guru</title>
+
+    <script type="module" src="main.js"></script>
+    <script type="module" src="destinations.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <H1> Getaway Guru</H1>
+    <form id="travel-form">
+        <fieldset>
+            <legend>Plan Your Perfect Getaway</legend>
+            <label for="budget">Destination Budget:</label>
+            <input type="text" id="budget" name="budget" required min="700" placeholder="Enter Your Budget (Min $700)">> <br><br>
+            
+            <label for="activities">What kind of experience are you looking for?<label>
+            <select id="activities" name="activities" required>
+                <option value="" disabled selected>Select an activity</option>
+                <option value="Winter-Activities">Winter Thrills - Embrace the cold and feel the excitement.</option>
+                <option value="Sports">Sun-Seeker - Your ultimate escape to warm, sunny days.</option>
+                <option value="Touristy Activities">Relax & Explore - Perfect for unwinding and finding your next escape.</option>
+            </select> <br><br>
+            
+            <label for="warm-weather">Prefer Warm Weather?</label>
+            <input type="checkbox" id="warm-weather" name="warm-weather"><br><br>
+            
+            <label for="days">How many days will you be staying?</label>
+            <input type="number" id="days" name="days" required min="1"placeholder="Trip Length (in days)"><br><br>
+            
+            <button type="submit">Find My Perfect Destinations!</button>
+        </fieldset>
+    </form>
+    <div id="destination-output"></div>
+    <div id="savedDestinations"></div>
+
+    <div id="packing-list-section">
+        <h2>"Ready, Set, Pack!"</h2>
+        <button id="generate-packing-list">Packing List Generator</button>
+        <div id="packing-list-output"></div>
+    </div>
+    </body>
+    
+</html>
